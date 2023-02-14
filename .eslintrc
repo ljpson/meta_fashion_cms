@@ -1,0 +1,48 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "airbnb",
+      "airbnb/hooks",
+      "airbnb-typescript",
+      "prettier"
+    ],
+    "ignorePatterns": ["node_modules/"],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+      //default export 권장
+      "import/prefer-default-export" : "warn",
+      //jsx 속성에 spread 사용 불가
+      "react/jsx-props-no-spreading" : "off",
+      //정규식에서 에러를 뱉어냄
+      "no-useless-escape" : "off",
+      //주석 작성시 처음 띄어쓰기 적용
+      "spaced-comment": "off",
+      //정의되기 전에 사용 불가
+      "no-use-before-define": "off",
+      //화살표 함수 스타일 지정
+      "arrow-body-style": "off",
+      //return 값을 항상 지정하거나 절대 지정하지 않는 명령문
+      "consistent-return": "off",
+      //component 사용시 react에서 React를 import 하도록 강제
+      "react/react-in-jsx-scope": "off",
+      //함수형 컴포넌트 선언시 function 키워드를 통해 선언하도록 강제
+      "react/function-component-definition": "off",
+      //컴포넌트 배열을 나열할 때 key 값으로 인덱스를 주지 못하도록 강제
+      "react/no-array-index-key": "off",
+      //hook사용시 누락된 dependency를 적용하도록 강제
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-use-before-define": ["off"],
+      //사용하지 않는 변수가 없도록 강제
+      "@typescript-eslint/no-unused-vars" : "warn"
+    }
+  }
